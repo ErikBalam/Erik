@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- uso responsivo para el cambio de pantalla -->
+    <!--siempre se deben importan normalize de primero -->
+    <link rel="preoload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <!--Tipo de fuento-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@200;400;700&display=swap" rel="stylesheet">
+    
     <link rel="preoload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -11,12 +20,14 @@
      <header>
      <h1 class="titulo">Erik Balam <span>Developer</span></h1>
     </header>
-     <nav>
+    <div clas="nav-bg">
+     <nav class="navegador-principal contenedor">
       <a href="#">Inicio</a>
-      <a href="#">Sobre mi</a>
+      <a href="#">Sobre mí</a>
       <a href="#">Clientes</a>
       <a href="#">Contacto</a>
      </nav>
+    </div>
 
 <!--Crear otro repositorio-->
 
@@ -47,7 +58,7 @@
         </p>
       </section>
      <section>
-      <h3>Aplicaciones moviles</h3>
+      <h3>Aplicaciones móviles</h3>
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-android" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <path d="M4 10l0 6" />
@@ -94,14 +105,10 @@
             </div>
 
             <div>
-              <label >Telefon</label>
+              <label >Teléfono</label>
               <input type="tel" placeholder="Tu telefono">
             </div>
 
-            <div>
-              <label >Avion</label>
-              <input type="tel" placeholder="Tu telefono">
-            </div>
 
             <div>
               <label >Correo</label>
