@@ -7,10 +7,26 @@
 
 }
 html{
-    font-size: 62.5%;
+    font-size: 62.5%;/*es el encargado de establecer el tamaño de fuente*/
 }
 body{
     font-size: 16px;
+}
+/* se aplica de 0 pixeles*/
+body{
+    background-color: bisque;
+}
+/*recomendado 
+480 px para cel y 768 px para tablet*/
+@media(min-width:480px){
+    body{
+        background-color: blue;
+    }
+}
+@media(min-width:768px){
+    body{
+        background-color:cornflowerblue;
+    }
 }
 
 .titulo{
@@ -22,34 +38,45 @@ body{
 }
 .navegador-principal{
     background-color: var(--secundario) ;
-    padding:1rem ;
+    /*padding:1rem ;*/
     display: flex;/*alinea elementos en tus diseños*/
-    justify-content: space-between;
+    justify-content: space-between;/*separa el contenido de la barra de navegación */
     font-weight: bold;
     font-size: 2rem;
+    flex-direction: column;
+    align-items: center;
 }
-/*al poner el pulsor en el hiperevinvulo*/
+
+@media(min-width:480px) {
+    .navegador-principal{
+    flex-direction: :row;
+    justify-content: flex-start;
+  }
+}
+
+/*Este selector se activa cuando el usuario para el raton sobre el enlace dentro del nav*/
 .navegador-principal a:hover{
-    background-color: var(--primario);
-    color: var(--oscuro);
-    
-
+    background-color: var(--primario);/*cambia el color del fondo de la barra de navegación*/
+    color: var(--oscuro); /*cambia el color de texto que hay dentro de la barra de navegación*/
 }
 
+/*establece el diseño de la barra de navegación*/
 .navegador-principal a{
     color: var(--blanco);
-    text-decoration: none; /*Resmueve el estilo subrayado*/
-    padding: 1rem;
+    text-decoration: none; /*Remueve el estilo subrayado*/
+    padding: 1rem;/*deja un espacio en los extremos para la barra de navegación*/
 }
 
 .contenedor{
-    width: 120rem;/*1200 pixeles porque 1 rem = 10px */
-    margin: 0 auto;
+    max-width: 120rem;/*1200 pixeles porque 1 rem = 10px */
+    margin: 0 auto; /*ajusta el contenido de nav para que los justifique*/
 }
 .nav-bg{
-    background-color: var(--secundario);
+  /* background-color: var(--gris);*/
 }
-/*
-p{
-    background-color: var(--primario);
-}*/
+.hero{
+    background-image: url(../img/hero.jpg);/*.. regresar un nivel de directerorio ya que la carpeta esta afuera ccs */
+    background-repeat: no-repeat; /* evita la repetición de la imagen cuando es pequeña*/
+    background-size: cover; /* sirve para cubrir la imagen con todo el tamaña posible*/
+
+}
