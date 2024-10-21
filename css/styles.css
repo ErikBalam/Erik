@@ -1,82 +1,206 @@
-:root{
-    --blanco:#ffffff;
-    --oscuro:#212121;
-    --primario:#ffc107;
-    --secundario:#0097a7;
-    --gris:#757575;
+/* parecido a declarar variables globales en java  */
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #26939f;
+    --gris: #757575;
+    --gris_claro: #b6b6b6 /* Se agrego b6b6b6b6 */
 
 }
-html{
-    font-size: 62.5%;/*es el encargado de establecer el tamaño de fuente*/
+
+/* llama a un elemento o etiqueta de HTML */
+/* Truco para uniformidad entre navegadores*/
+html {
+    font-size: 62.5%;
 }
-body{
+
+body {
     font-size: 16px;
+    font-family: 'Krub', sans-serif; /* Se modifica el tipo de letra*/
+    background-image: linear-gradient(
+        to top, var(--gris) 0%, var(--blanco) 100% 
+    );
+
 }
-/* se aplica de 0 pixeles*/
-body{
+
+/* Se aplica desde 0 pixeles */
+/*body {
     background-color: bisque;
-}
-/*recomendado 
-480 px para cel y 768 px para tablet*/
-@media(min-width:480px){
-    body{
-        background-color: blue;
-    }
-}
-@media(min-width:768px){
-    body{
-        background-color:cornflowerblue;
+} */
+
+/* Recomendado 
+480 para moviles
+768 para tables
+*/
+
+/*@media (min-width: 480px) {
+    body {
+        /* background-color: ; 
     }
 }
 
-.titulo{
+/*@media (min-width: 768px) {
+    body {
+        background-color: cornflowerblue;
+    }
+} */
+
+
+
+/* Comentatios*/
+/* Hace referencia a las clases*/
+
+/*.titulo{
     text-align: center;
-    font-size: 3.8rem ;
-}
-.titulo span{
+    font-size: 3.8rem;
+
+} */
+
+/* Editar espeificamente la palabra delevoper
+.titulo span {
     font-size: 2rem;
-}
-.navegador-principal{
-    background-color: var(--secundario) ;
-    /*padding:1rem ;*/
-    display: flex;/*alinea elementos en tus diseños*/
-    justify-content: space-between;/*separa el contenido de la barra de navegación */
+} */
+
+.navegcion-principal    {
+    /*background-color: var(--secundario);
+    /* margen es por fuera y padding es por dentro */
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+   /* padding: 1rem; */
+    display: flex; /* Flexbox esta diseniado para alinear elementos en tus disenio */
+    /* justify-content para FILAS / aling-items es para COLUMNAS (flex-direction) */
+    justify-content: space-between;
     font-weight: bold;
     font-size: 2rem;
     flex-direction: column;
     align-items: center;
 }
 
-@media(min-width:480px) {
-    .navegador-principal{
-    flex-direction: :row;
-    justify-content: flex-start;
-  }
+@media (min-width: 768px) {
+    .navegcion-principal {
+        flex-direction: row; /* alinear en filas */
+        justify-content: space-between;
+
+    }
 }
 
-/*Este selector se activa cuando el usuario para el raton sobre el enlace dentro del nav*/
-.navegador-principal a:hover{
-    background-color: var(--primario);/*cambia el color del fondo de la barra de navegación*/
-    color: var(--oscuro); /*cambia el color de texto que hay dentro de la barra de navegación*/
-}
 
-/*establece el diseño de la barra de navegación*/
-.navegador-principal a{
+.navegcion-principal a {
     color: var(--blanco);
-    text-decoration: none; /*Remueve el estilo subrayado*/
-    padding: 1rem;/*deja un espacio en los extremos para la barra de navegación*/
+    text-decoration: none; /*remueve el estilo subrayado en el texto */
+    padding: 1rem;
 }
 
-.contenedor{
-    max-width: 120rem;/*1200 pixeles porque 1 rem = 10px */
-    margin: 0 auto; /*ajusta el contenido de nav para que los justifique*/
-}
-.nav-bg{
-  /* background-color: var(--gris);*/
-}
-.hero{
-    background-image: url(../img/hero.jpg);/*.. regresar un nivel de directerorio ya que la carpeta esta afuera ccs */
-    background-repeat: no-repeat; /* evita la repetición de la imagen cuando es pequeña*/
-    background-size: cover; /* sirve para cubrir la imagen con todo el tamaña posible*/
 
+/* Al poner el cursos en el hipervinculo*/
+.navegcion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+} 
+
+.contenedor {
+    max-width: 120rem; /* 1200 pixeles porque 1 rem = 10 px. Unidad de medida*/
+    /* margin-top: 0
+    margin-bottom: 0
+    margin-right: 0
+    margin-lefth:0*/
+    margin: 0 auto;
+}
+
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.hero {
+    background-image: url(../img/hero.jpg); /* ../ es para regresar un nivl del directorio ya que la carpeta img esta afuera de css */
+    background-repeat: no-repeat; /* Sirve para evitar la repeticion de la imagen cuamd es pequenio*/
+    background-size: cover; /* Sirve para cubrir la imagen con todo el tamanio posible */
+    height: 450px;
+    position: relaotive;
+
+
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /* */
+    width: 100%;
+    height: 100%;
+    /* Alinear el texto vertical y horinzontalmente */
+    display: flex; /* Ayuda a disponer a todos los elementos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*color: var(--blanco); / Mejor usar una varibale antes*/
+
+}
+
+/* En el padre la position debe ser relative y el hijo en este caso .contenido-hero debe se position
+/* absolute */
+
+.contenido-hero p,
+.contenido-hero h2 {
+    color: var(--blanco);
+}
+
+/* Tipografias */
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ubicacion p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 40px;
+    margin-top: 15px;
+    background-color: #26939f;
+    color: white;
+    text-decoration: none; /* Quita el subrayado */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: 'Krub', sans-serif;   
+    text-transform: uppercase; /* Poner el texto en mayuscula*/
+    width: 90%;
+    text-align: center;
+}
+
+.boton:hover {
+    background-color: var(--primario);
+    color: var(--oscuro)
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto; /* Se adapta el boton a la pantalla*/
+    }
 }
