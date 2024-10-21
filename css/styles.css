@@ -85,7 +85,7 @@ mas especifico o mas definido*/
     background-image: url(../img/hero.jpg);/* ../ es para regresar un nivel de directorio
     ya que la carpeta img esta afuera de css*/
 
-    background-repeat: no-repeat; //*sirve para evitar la repeticion de la imagen cuando es pequena */
+    background-repeat: no-repeat; /*sirve para evitar la repeticion de la imagen cuando es pequena */
     background-size: cover;/*sirve para cubrir la imagen con todo el tamano */
     height: 450px; /*alto del elemento hero*/
     position: relative;/* es para manipular la posicion de algo. el padre siempre debe ser relativo y el hijo debe ser absoluto*/
